@@ -2,55 +2,57 @@ package com.coderscampus.assignment10.spoonacular.dto;
 
 public class Week {
 	
-	private Day sunday;
-	private Day monday;
-	private Day tuesday;
-	private Day wednesday;
-	private Day thursday;
-	private Day friday;
-	private Day saturday;
+	private DayResponse sunday;
+	private DayResponse monday;
+	private DayResponse tuesday;
+	private DayResponse wednesday;
+	private DayResponse thursday;
+	private DayResponse friday;
+	private DayResponse saturday;
 	
-	public Day getSunday() {
+	public DayResponse getSunday() {
 		return sunday;
 	}
-	public void setSunday(Day sunday) {
+	public void setSunday(DayResponse sunday) {
 		this.sunday = sunday;
 	}
-	public Day getMonday() {
+	public DayResponse getMonday() {
 		return monday;
 	}
-	public void setMonday(Day monday) {
+	public void setMonday(DayResponse monday) {
 		this.monday = monday;
 	}
-	public Day getTuesday() {
+	public DayResponse getTuesday() {
 		return tuesday;
 	}
-	public void setTuesday(Day tuesday) {
+	public void setTuesday(DayResponse tuesday) {
 		this.tuesday = tuesday;
 	}
-	public Day getWednesday() {
+	public DayResponse getWednesday() {
 		return wednesday;
 	}
-	public void setWednesday(Day wednesday) {
+	public void setWednesday(DayResponse wednesday) {
 		this.wednesday = wednesday;
 	}
-	public Day getThursday() {
+	public DayResponse getThursday() {
 		return thursday;
 	}
-	public void setThursday(Day thursday) {
+	public void setThursday(DayResponse thursday) {
 		this.thursday = thursday;
 	}
-	public Day getFriday() {
+	public DayResponse getFriday() {
 		return friday;
 	}
-	public void setFriday(Day friday) {
+	public void setFriday(DayResponse friday) {
 		this.friday = friday;
 	}
-	public Day getSaturday() {
+	public DayResponse getSaturday() {
 		return saturday;
 	}
-	public void setSaturday(Day saturday) {
+	public void setSaturday(DayResponse saturday) {
 		this.saturday = saturday;
 	}
+	
+	
 
 }

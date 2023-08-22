@@ -3,12 +3,14 @@ package com.coderscampus.assignment10.spoonacular;
 import java.net.URI;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.coderscampus.assignment10.spoonacular.dto.SpoonacularResponse;
+import com.coderscampus.assignment10.spoonacular.dto.WeekResponse;
 
-public class SpoonacularIntegration {
+@Service
+public class SpoonacularIntegrationService {
 
 	public void callApi() {
 		RestTemplate rt = new RestTemplate();
@@ -18,8 +20,8 @@ public class SpoonacularIntegration {
 									  .build()
 									  .toUri();
 		
-		ResponseEntity<SpoonacularResponse> response = rt.getForEntity(uri, SpoonacularResponse.class);
-		System.out.println(response);
+		ResponseEntity<WeekResponse> weekResponse = rt.getForEntity(uri, WeekResponse.class);
+		System.out.println(weekResponse);
 	}
 
 } // Maybe I can use Generics to replace SpoonacularResponse - that way i only need this one

@@ -1,6 +1,6 @@
 package com.coderscampus.assignment10.spoonacular.dto;
 
-public class SpoonacularResponse {
+public class WeekResponse {
 
 	private Week week;
 

@@ -1,5 +1,5 @@
 package com.coderscampus.assignment10.spoonacular.dto;
 
-public class Day {
+public class DayResponse {
 
 }
