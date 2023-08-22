@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coderscampus.assignment10.spoonacular.SpoonacularIntegration;
 
-//@RestController
-//public class RecipeController {
-//	
+@RestController
+public class RecipeController {
+	
 //	@Autowired
 //	private SpoonacularIntegration spoonaculatIntegration;
 //	
@@ -20,5 +20,5 @@ import com.coderscampus.assignment10.spoonacular.SpoonacularIntegration;
 //	@GetMapping("mealplanner/day")
 //	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
 //	}
-//
-//}
+
+}

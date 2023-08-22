@@ -2,14 +2,17 @@ package com.coderscampus.assignment10.spoonacular.dto;
 
 public class SpoonacularResponse {
 
-	public String week;
+	private Week week;
 
-	public String getWeek() {
+	public Week getWeek() {
 		return week;
 	}
 
-	public void setWeek(String week) {
+	public void setWeek(Week week) {
 		this.week = week;
 	}
+
+	
+	
 
 }

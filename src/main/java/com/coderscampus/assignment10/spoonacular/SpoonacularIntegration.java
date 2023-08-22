@@ -22,4 +22,6 @@ public class SpoonacularIntegration {
 		System.out.println(response);
 	}
 
-}
+} // Maybe I can use Generics to replace SpoonacularResponse - that way i only need this one
+  // method, but i can use it for both my getday and getweek 
+			
