@@ -12,7 +12,4 @@ public class WeekResponse {
 		this.week = week;
 	}
 
-	
-	
-
 }
