@@ -20,16 +20,6 @@ public class SpoonacularIntegrationService {
 															.queryParam("timeFrame", "week")
 															.queryParam("apiKey", "9600681b87134872bc740384c3808883");
 
-		if (numCalories != null) {
-			uriBuild.queryParam("targetCalories", numCalories);
-		}
-		if (diet != null) {
-			uriBuild.queryParam("diet", diet);
-		}
-		if (exclusions != null) {
-			uriBuild.queryParam("exclude", exclusions);
-		}
-
 		URI uri = uriBuild.build()
 						  .toUri();
 
@@ -43,16 +33,6 @@ public class SpoonacularIntegrationService {
 		UriComponentsBuilder uriBuild = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 															.queryParam("timeFrame", "day")
 															.queryParam("apiKey", "9600681b87134872bc740384c3808883");
-
-		if (numCalories != null) {
-			uriBuild.queryParam("targetCalories", numCalories);
-		}
-		if (diet != null) {
-			uriBuild.queryParam("diet", diet);
-		}
-		if (exclusions != null) {
-			uriBuild.queryParam("exclude", exclusions);
-		}
 
 		URI uri = uriBuild.build()
 						  .toUri();
