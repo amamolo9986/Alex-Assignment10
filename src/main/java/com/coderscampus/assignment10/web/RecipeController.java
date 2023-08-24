@@ -19,14 +19,16 @@ public class RecipeController {
 	
 	@GetMapping("mealplanner/week")
 	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
-		WeekResponse weekResponse = spoonacularIntegrationService.callWeekApi();
-		return ResponseEntity.ok(weekResponse);
+		ResponseEntity<WeekResponse> weekResponse = spoonacularIntegrationService.callWeekApi();
+		return weekResponse;
 	}
 
 	@GetMapping("mealplanner/day")
 	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		DayResponse dayResponse = spoonacularIntegrationService.callDayApi();
-		return ResponseEntity.ok(dayResponse);
+		ResponseEntity<DayResponse> dayResponse = spoonacularIntegrationService.callDayApi();
+		return dayResponse;
 	}
 
 }
+  // figure out method params
+  // When i call the day end point, i'm just given one day and it doesn't even tell me the day. Is that expected?

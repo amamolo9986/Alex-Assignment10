@@ -13,7 +13,7 @@ import com.coderscampus.assignment10.spoonacular.dto.WeekResponse;
 @Service
 public class SpoonacularIntegrationService {
 
-	public WeekResponse callWeekApi() {
+	public ResponseEntity<WeekResponse> callWeekApi() {
 		RestTemplate rt = new RestTemplate();
 
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
@@ -23,10 +23,10 @@ public class SpoonacularIntegrationService {
 									  .toUri();
 
 		ResponseEntity<WeekResponse> weekResponse = rt.getForEntity(uri, WeekResponse.class);
-		return weekResponse.getBody();
+		return weekResponse;
 	}
 
-	public DayResponse callDayApi() {
+	public ResponseEntity<DayResponse> callDayApi() {
 		RestTemplate rt = new RestTemplate();
 
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
@@ -36,7 +36,7 @@ public class SpoonacularIntegrationService {
 									  .toUri();
 
 		ResponseEntity<DayResponse> dayResponse = rt.getForEntity(uri, DayResponse.class);
-		return dayResponse.getBody();
+		return dayResponse;
 	}
 
 }
