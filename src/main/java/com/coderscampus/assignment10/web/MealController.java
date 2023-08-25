@@ -21,7 +21,7 @@ public class MealController {
 			@RequestParam(value = "numCalories", required = false) String numCalories, 
 			@RequestParam(value = "diet", required=false) String diet, 
 			@RequestParam(value = "exclusions", required = false) String exclusions){
-		ResponseEntity<WeekResponse> weekResponse = spoonacularIntegrationService.callWeekApi(numCalories, diet, exclusions);
+		ResponseEntity<WeekResponse> weekResponse = spoonacularIntegrationService.callWeekApi();
 		return weekResponse;
 	}
 
@@ -30,7 +30,7 @@ public class MealController {
 			@RequestParam(value = "numCalories", required = false) String numCalories, 
 			@RequestParam(value = "diet", required=false) String diet, 
 			@RequestParam(value = "exclusions", required = false) String exclusions){
-		ResponseEntity<DayResponse> dayResponse = spoonacularIntegrationService.callDayApi(numCalories, diet, exclusions);
+		ResponseEntity<DayResponse> dayResponse = spoonacularIntegrationService.callDayApi();
 		return dayResponse;
 	}
 
