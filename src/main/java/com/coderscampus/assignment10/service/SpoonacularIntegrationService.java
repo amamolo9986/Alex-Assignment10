@@ -16,12 +16,11 @@ public class SpoonacularIntegrationService {
 	public ResponseEntity<WeekResponse> callWeekApi() {
 		
 		RestTemplate rt = new RestTemplate();
-		UriComponentsBuilder uriBuild = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 															.queryParam("timeFrame", "week")
-															.queryParam("apiKey", "9600681b87134872bc740384c3808883");
-
-		URI uri = uriBuild.build()
-						  .toUri();
+															.queryParam("apiKey", "9600681b87134872bc740384c3808883")
+															.build()
+															.toUri();
 
 		ResponseEntity<WeekResponse> weekResponse = rt.getForEntity(uri, WeekResponse.class);
 		return weekResponse;
@@ -30,12 +29,11 @@ public class SpoonacularIntegrationService {
 	public ResponseEntity<DayResponse> callDayApi() {
 		
 		RestTemplate rt = new RestTemplate();
-		UriComponentsBuilder uriBuild = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 															.queryParam("timeFrame", "day")
-															.queryParam("apiKey", "9600681b87134872bc740384c3808883");
-
-		URI uri = uriBuild.build()
-						  .toUri();
+															.queryParam("apiKey", "9600681b87134872bc740384c3808883")
+															.build()
+															.toUri();
 		
 		ResponseEntity<DayResponse> dayResponse = rt.getForEntity(uri, DayResponse.class);
 		return dayResponse;
