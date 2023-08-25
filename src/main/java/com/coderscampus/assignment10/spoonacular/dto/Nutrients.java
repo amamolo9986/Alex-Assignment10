@@ -5,7 +5,7 @@ public class Nutrients {
 	private double calories;
 	private double protein;
 	private double fat;
-	private double carbohydrants;
+	private double carbohydrates;
 
 	public double getCalories() {
 		return calories;
@@ -31,12 +31,12 @@ public class Nutrients {
 		this.fat = fat;
 	}
 
-	public double getCarbohydrants() {
-		return carbohydrants;
+	public double getCarbohydrates() {
+		return carbohydrates;
 	}
 
-	public void setCarbohydrants(double carbohydrants) {
-		this.carbohydrants = carbohydrants;
+	public void setCarbohydrates(double carbohydrates) {
+		this.carbohydrates = carbohydrates;
 	}
 
 }
