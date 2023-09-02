@@ -2,15 +2,15 @@ package com.coderscampus.assignment10.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.coderscampus.assignment10.service.SpoonacularIntegrationService;
 import com.coderscampus.assignment10.spoonacular.dto.DayResponse;
 import com.coderscampus.assignment10.spoonacular.dto.WeekResponse;
 
-@RestController
+@Controller
 public class MealController {
 
 	@Autowired
@@ -21,7 +21,7 @@ public class MealController {
 			@RequestParam(value = "numCalories", required = false) String numCalories, 
 			@RequestParam(value = "diet", required=false) String diet, 
 			@RequestParam(value = "exclusions", required = false) String exclusions){
-		ResponseEntity<WeekResponse> weekResponse = spoonacularIntegrationService.callWeekApi();
+		ResponseEntity<WeekResponse> weekResponse = spoonacularIntegrationService.callWeekApi(numCalories, diet, exclusions);
 		return weekResponse;
 	}
 
@@ -30,7 +30,7 @@ public class MealController {
 			@RequestParam(value = "numCalories", required = false) String numCalories, 
 			@RequestParam(value = "diet", required=false) String diet, 
 			@RequestParam(value = "exclusions", required = false) String exclusions){
-		ResponseEntity<DayResponse> dayResponse = spoonacularIntegrationService.callDayApi();
+		ResponseEntity<DayResponse> dayResponse = spoonacularIntegrationService.callDayApi(numCalories, diet, exclusions);
 		return dayResponse;
 	}
 
