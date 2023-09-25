@@ -2,6 +2,7 @@ package com.coderscampus.assignment10.service;
 
 import java.net.URI;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,15 +14,24 @@ import com.coderscampus.assignment10.spoonacular.dto.WeekResponse;
 
 @Service
 public class SpoonacularIntegrationService {
+	
+	@Value("${spoonacular.urls.base}")
+	private String baseUrl;
+	
+	@Value("${spoonacular.urls.mealplan}")
+	private String mealPlannerUrl;
+	
+	@Value("${spoonacular.apiKey}")
+	private String apiKey;
 
 	public ResponseEntity<WeekResponse> callWeekApi(@RequestParam(required = false) String numCalories, 
 													@RequestParam(required = false) String diet, 
 													@RequestParam(required = false) String exclusions) {
 		
 		RestTemplate rt = new RestTemplate();
-		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlannerUrl)
 															  .queryParam("timeFrame", "week")
-															  .queryParam("apiKey", "9600681b87134872bc740384c3808883");
+															  .queryParam("apiKey", apiKey);
 															
 		if(numCalories!= null) {
 			uriBuilder.queryParam("targetCalories", numCalories);
@@ -45,9 +55,9 @@ public class SpoonacularIntegrationService {
 												  @RequestParam(required = false) String exclusions) {
 		
 		RestTemplate rt = new RestTemplate();
-		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlannerUrl)
 															  .queryParam("timeFrame", "day")
-															  .queryParam("apiKey", "9600681b87134872bc740384c3808883");
+															  .queryParam("apiKey", apiKey);
 															
 		if(numCalories!= null) {
 			uriBuilder.queryParam("targetCalories", numCalories);
@@ -67,3 +77,6 @@ public class SpoonacularIntegrationService {
 	}
 
 }
+
+
+
